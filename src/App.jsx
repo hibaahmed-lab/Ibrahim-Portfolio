@@ -5,6 +5,24 @@ import hp1 from "./images/hp1.jpeg";
 import hp2 from "./images/hp2.jpeg";
 import hp3 from "./images/hp3.jpeg";
 import hp4 from "./images/hp4.jpg";
+import t1 from "./images/t1.jpeg";
+import t2 from "./images/t2.jpeg";
+import t3 from "./images/t3.jpeg";
+import e1 from "./images/e1.jpeg";
+import e2 from "./images/e2.jpeg";
+import e3 from "./images/e3.jpeg";
+import etc1 from "./images/etc1.jpeg";
+import etc2 from "./images/etc2.jpeg";
+import etc3 from "./images/etc3.jpeg";
+import arm1 from "./images/arm1.jpeg";
+import arm2 from "./images/arm2.jpeg";
+import arm3 from "./images/arm3.jpeg";
+import ac1 from "./images/ac1.jpeg";
+import ac2 from "./images/ac2.jpeg";
+import ac3 from "./images/ac3.jpeg";
+import ac4 from "./images/ac4.jpeg";
+import ac5 from "./images/ac5.jpeg";
+import ac6 from "./images/ac6.jpeg";
 
 /* ===================================================================
    IBRAHIM ISPHAHANI — Mechanical Engineering Portfolio
@@ -45,6 +63,9 @@ const STATUS = [
 
 const ORDER = ["etc", "arm", "trash"];
 
+const SLIDES_URL =
+  "https://docs.google.com/presentation/d/1Whusgodjx4UMC8x3ADTw814yRlzCcXwTVXclUzGSE_k/edit?usp=sharing";
+
 const PROJECTS = {
   etc: {
     id: "etc",
@@ -52,66 +73,121 @@ const PROJECTS = {
     title: "Electronic Throttle Control",
     sub: "SAE Formula E",
     meta: ["SAE Formula E"],
-    roles: "Project Manager • CAD Designer • Electronics Lead",
-    desc: "A safety-critical throttle-by-wire system for an electric Formula SAE powertrain — replacing the mechanical pedal linkage with redundant sensing and software torque control.",
-    what: "Replace the mechanical throttle linkage with a fully electronic throttle-by-wire system. The driver pedal commands a torque request that the controller validates, filters, and transmits to the motor controller over CAN, with continuous fault monitoring required for competition safety.",
-    how: "Two independent accelerator-position sensors feed a microcontroller running a plausibility check between channels. Firmware written in C handles signal conditioning, fault detection, and a state machine that cuts torque on any disagreement. The board integrates with the vehicle CAN bus and was validated on the bench and in-vehicle.",
-    results: "Delivered a responsive, fault-tolerant throttle that passed Formula SAE electrical technical inspection. Redundant sensing and the shutdown state machine satisfied the rules for safety-critical signals.",
-    learned: "Designing for safety and redundancy changes everything — every signal needs a defined failure mode. I also learned to coordinate mechanical, electrical, and firmware work across a team toward a single validated deadline.",
+    roles: "Project Manager • Lead CAD Designer • Electronics Lead",
+    what: [
+      "Senior design project responsible for designing and implementing an electronic throttle control for the new Formula E vehicle.",
+      "The acceleration and braking pedal must work reliably in racing situations in which the car would be used.",
+      "The design must adhere to SAE regulations and must be approved by other cross functional teams.",
+    ],
+    how: [
+      "Working cross functionally with chassis and electrical teams to come up with a CAD design that fits for the overall vision for the vehicle.",
+      "Using arduino and bosch sensors to produce reliable acceleration and regenerative braking in racing situations.",
+    ],
+    results: [
+      "Successfully created structurally sound and functioning models of the pedal, and components relevant specifically for the electronic throttle control.",
+      "Functioning code and electronics assembly all adhering to the strict SAE regulations.",
+    ],
+    designedComponents: "Sensor Grip Female Sensor Grip Male Spacer",
+    learned: [
+      "As the Project Manager, Lead CAD Designer, and Electronics Lead for the Electronic Throttle Control (ETC) Senior Design Project, I was responsible for coordinating project development, creating all mechanical designs, and overseeing electronics integration. Working closely with the Formula SAE Electric team, I translated vehicle requirements and SAE competition regulations into manufacturable CAD designs using industry-standard engineering practices.",
+      "From a mechanical design perspective, I developed and refined components based on team feedback, packaging constraints, and Formula SAE requirements. This strengthened my skills in CAD modeling, design iteration, tolerance considerations, and design-for-manufacturing principles.",
+      "On the electronics side, I integrated a Bosch digital accelerometer and developed software to process sensor outputs. This involved sensor communication, signal interpretation, data validation, and embedded programming. Through this work, I gained hands-on experience with electronics troubleshooting, sensor integration, microcontroller programming, and system-level testing.",
+    ],
+    videoUrl: SLIDES_URL,
+    videoPosition: "afterComponents",
   },
   arm: {
     id: "arm",
     projNo: "02",
     title: "Robotic Arm",
-    sub: "ESP32 • C++ • 3D Printing",
-    meta: ["ESP32", "C++", "3D Printing"],
+    sub: "Personal Project",
+    meta: ["Personal Project"],
     roles: null,
-    desc: "A desktop multi-axis robotic arm — a 3D-printed structure driven by an ESP32, built to explore embedded motion control and inverse kinematics.",
-    what: "A multi-degree-of-freedom articulated arm that moves its end effector to commanded positions in space, with a fully 3D-printed mechanical structure and on-board motion control.",
-    how: "An ESP32 drives the joint actuators via PWM, running inverse-kinematics math in C++ to convert target coordinates into joint angles. The links and joints were designed for additive manufacturing with attention to tolerances, clearance, and fit.",
-    results: "Smooth, repeatable multi-axis motion to commanded positions, in a compact build assembled entirely from printed parts.",
-    learned: "Kinematics is where math meets mechanics — small tolerance and calibration errors compound across joints. Designing parts specifically for 3D printing made assembly far cleaner.",
+    what: [
+      "A 4 axis robotic arm design project. The function allows the arm to grab and hold objects using a controller.",
+      "A first iteration of the design to see the practicality of using a robotic arm in a hobbyist workshop.",
+    ],
+    how: [
+      "A solidworks CAD model was first constructed, based on components bought online. 2 different types of servo motors were used, the CAD needed to reflect the mounting positions for each motor. Which was followed up with 3D printing the arm components.",
+      "Electrical and coding setup was the final step in getting a fully functional arm.",
+    ],
+    results: [
+      "The final result was a robotic arm that moved with commands given through a PS5 controller. The robotic arm was powered through an ESP32 and coded with C++.",
+    ],
+    designedComponents:
+      "Robotic Arm Base Arm Link 1 Arm Link 2\n\nWrist Gripper Base Gripper: Gear, Link,\n\nPincher",
+    learned: [
+      "This project strengthened my skills in CAD design, 3D printing, electronics integration, and programming. Through multiple design iterations, I learned how to refine components based on testing, manufacturing constraints, and performance requirements. As my first experience using a personal 3D printer, I gained practical knowledge of print limitations, tolerances, and design-for-manufacturing principles.",
+      "On the electronics and software side, I improved my understanding of interfacing hardware with microcontrollers and developed stronger debugging and troubleshooting skills while programming the robotic arm. Overall, the project reinforced the importance of iterative design, testing, and problem-solving in robotics development.",
+    ],
   },
   trash: {
     id: "trash",
     projNo: "03",
     title: "Trash Robot",
-    sub: "Raspberry Pi • AI Object Detection • Motor Control",
-    meta: ["Raspberry Pi", "AI Object Detection", "Motor Control"],
+    sub: "Personal Project (Work in Progress)",
+    meta: ["Personal Project", "Work in Progress"],
     roles: null,
-    desc: "An autonomous trash-collecting robot that uses on-board AI vision to find, approach, and retrieve litter.",
-    what: "A mobile robot that detects target objects with a camera, drives toward them, and collects them — a complete perception-to-action loop running on-board.",
-    how: "A Raspberry Pi runs an object-detection model on a live camera feed, locating targets in frame. Control logic converts detections into drive commands sent to the motor driver, closing the loop between vision and motion in real time.",
-    results: "The robot reliably identifies target objects, navigates toward them, and collects them autonomously within its operating environment.",
-    learned: "Edge AI lives under tight real-time and compute limits — model choice and frame rate matter as much as raw accuracy. Integrating perception, control, and hardware showed me how fragile the seams between subsystems can be.",
+    what: [
+      "A fully functioning trash robot that will take out the trash by command only. By using voice command, the robot will open the garage, move itself to a designated location on the curb, and return once the trash is removed.",
+    ],
+    how: [
+      "The robot will operate with a structured code to operate on a timer or command. An Arduino with a relay will be connected to a garage opener and will communicate directly with the Raspberry pi installed on the trashcan. The trashcan will have a housing where the Raspberry pi, battery and motor controller will sit.",
+      "The Raspberry pi will initiate the motors to move and have ai integrated to have object detection and make real time decisions rather than relying on preplanned code.",
+    ],
+    results: [
+      "As this is still in the prototype phase, the robot responds well with a controller and/or a preordained path.",
+      "The arduino controlled garage opener works with an app and still needs to be integrated with the AI installed.",
+      "AI object detection software works but will need a hardware upgrade as the framerate is too slow.",
+    ],
+    learned: [
+      "This project provided a deep learning experience in robotics, combining the mechanical design aspects learned in school, and advancing my knowledge in electronics, embedded systems, and software development. Throughout the process of creating the robot, I learned the capabilities of multiple motor controllers including ESP32, the Arduino nano/uno, and the Raspberry pi.",
+      "This project provided me with a challenge to use my root cause analysis learned through school and work. Being the sole contributor in this project, I learned how important it was to document all the issues I came across, especially from an electrical standpoint. Due to the high current and voltage systems I was using, making errors became costly and finding my own way in diagnosing and solving the issue was a great learning experience and contributed to gaining better results.",
+      "Through my use of root cause analysis, I learned more skills such as soldering my own wires, creating my own power source, and 3D printing my own housings to fit the design better. Documenting the issues I came across throughout the design process also allowed me to find patterns and to further prevent future mistakes.",
+      "On the electronics side, I gained a better understanding of motor control through PWM and other signal types, hardware interfacing with microcontrollers, power management, setting up a proper breadboard, and the overall physics behind electrical engineering. Because I majored in mechanical engineering, the design aspect directly contributed to the physical layout of the entire electrical system, from where the sensors will go to how to achieve balance from the weight of the battery and other components.",
+      "On the coding aspect, I significantly improved my skills as a coder and understanding of the complex architecture when it comes to the software behind a robot which uses multiple microcontrollers, sensors, cameras, and motor controllers. Implementing AI has proven to be an ongoing challenge but understanding how AI can make decisions through the microcontroller and impact the hardware used was a rewarding process. My skills in both C++ and Python have grown through this project and will continue to grow as I finish the prototype and continue to make complex systems like this.",
+      "The most important thing I've learned from the entire process is the engineering mindset one develops when creating a project like this. Every issue, challenge, or catastrophic system failure has always created more motivation in finding out what the problem is and how to make the system better. My drive for engineering and why I chose to be an engineer is amplified when I work on this project and have found myself finding out why I truly became an engineer. The most important thing I've learned was not a skill but instead the love to learn new things and become a better engineer through the discipline of creating something.",
+    ],
+    videoUrl: SLIDES_URL,
+    videoPosition: "top",
   },
 };
 
 const EXPERIENCE_JOBS = [
   {
-    id: "fsae",
-    position: "Project Manager · Electronics Lead",
-    company: "Formula SAE — Electronic Throttle Control",
-    dates: "2023 — Present",
-    description:
-      "Led a safety-critical throttle-by-wire subsystem from concept through competition validation — coordinating mechanical, electrical, and firmware work across the team.",
+    id: "international",
+    position: "Mechanical Design Engineer",
+    company: "International Inc.",
+    dates: "June 2023 – Present",
     achievements: [
-      "Dual-channel accelerator sensing with plausibility checks and fault shutdown logic",
-      "CAN integration with the vehicle powertrain controller",
-      "Passed Formula SAE electrical technical inspection",
+      "Responsible for designing, sourcing, manufacturing, and overseeing exterior aerodynamic components for roof-mounted systems.",
+      "Design mechanical components using Siemens NX.",
+      "Manage engineering data through Teamcenter.",
+      "Prototype, create CAD models, produce manufacturing drawings, and troubleshoot existing designs.",
+      "Collaborate across engineering disciplines throughout product development.",
     ],
   },
   {
-    id: "robotics",
-    position: "Mechanical Design & Embedded Systems",
-    company: "Independent Robotics Projects",
-    dates: "2022 — Present",
-    description:
-      "Designed and built mechatronic systems spanning 3D-printed mechanisms, motor control, and on-board perception pipelines.",
+    id: "cobalt",
+    position: "Senior Reserve Engineer",
+    company: "Cobalt Robotics",
+    dates: "May 2022 – Present",
     achievements: [
-      "Multi-axis robotic arm with inverse kinematics on ESP32",
-      "Autonomous litter-collection robot with AI vision on Raspberry Pi",
-      "Rapid prototyping across CAD, additive manufacturing, and bench validation",
+      "Perform maintenance, assembly, and disassembly of autonomous security robots.",
+      "Diagnose hardware and software issues on customer sites.",
+      "Work directly with software engineers to implement field fixes.",
+      "Communicate customer feedback to engineering teams to improve future releases.",
+    ],
+  },
+  {
+    id: "molex",
+    position: "Product Design Engineer Intern",
+    company: "Molex",
+    dates: "May 2022 – August 2022",
+    achievements: [
+      "Designed components for high-voltage busbar systems.",
+      "Created CAD models using Siemens NX.",
+      "Assisted with prototyping and manufacturing for production.",
     ],
   },
 ];
@@ -119,60 +195,66 @@ const EXPERIENCE_JOBS = [
 const EDUCATION = [
   {
     id: "bsme",
-    degree: "Bachelor of Science, Mechanical Engineering",
-    university: "Mechanical Engineering Program",
-    graduation: "Expected 2026",
-    details: "Focus on robotics, product development, embedded systems, and design for manufacturing.",
+    degree: "Bachelor of Science · Mechanical Engineering",
+    university: "University of Illinois Chicago",
+    graduation: "September 2018 – May 2023",
+    activities: [
+      "Senior Design Project Manager – SAE Formula E Electronic Throttle Control",
+      "SAE BAJA Team",
+      "EDT Robotic Arm Team",
+      "Air Force ROTC Cadet",
+      "Army ROTC Cadet",
+    ],
   },
 ];
 
 const CERTIFICATIONS = [
-  { id: "gdt", name: "GD&T Certification", issuer: "ASME Y14.5", year: "2024" },
-  { id: "fea", name: "ANSYS FEA Fundamentals", issuer: "Simulation Training", year: "2023" },
+  { id: "six-sigma", name: "Six Sigma Green Belt Certified" },
+  { id: "gdt", name: "GD&T Certified" },
 ];
 
 const SKILL_CATEGORIES = [
   {
     id: "mech",
-    label: "Mechanical Design",
-    items: ["Tolerance Analysis", "GD&T", "Design for Manufacturing", "Root Cause Analysis", "Mechanism Design"],
+    label: "Mechanical Engineering",
+    items: ["Product Design", "Mechanical Design", "Design for Manufacturing", "Root Cause Analysis", "GD&T", "FEA", "Engineering Drawings"],
   },
   {
     id: "cad",
     label: "CAD",
-    items: ["SolidWorks", "AutoCAD", "Technical Drawings", "Assembly Modeling", "Parametric Design"],
-  },
-  {
-    id: "sim",
-    label: "Simulation",
-    items: ["ANSYS FEA", "Stress Analysis", "Thermal Analysis", "MATLAB", "Validation Testing"],
+    items: ["Siemens NX", "SolidWorks", "Teamcenter", "Technical Drawings"],
   },
   {
     id: "prog",
     label: "Programming",
-    items: ["Python", "C / C++", "Embedded C", "MATLAB Scripting", "Firmware Development"],
+    items: ["C++", "MATLAB", "Python", "Arduino"],
+  },
+  {
+    id: "embedded",
+    label: "Embedded Systems",
+    items: ["ESP32", "Raspberry Pi", "Sensor Integration", "Robotics", "Microcontrollers"],
   },
   {
     id: "mfg",
     label: "Manufacturing",
-    items: ["3D Printing", "Rapid Prototyping", "Design for Assembly", "Bench Validation", "CNC Basics"],
+    items: ["Rapid Prototyping", "3D Printing", "Hardware Assembly", "Mechanical Testing"],
   },
   {
-    id: "elec",
-    label: "Electronics",
-    items: ["PCB Integration", "CAN Bus", "ESP32", "Sensor Integration", "Embedded Systems"],
+    id: "prof",
+    label: "Professional",
+    items: ["Leadership", "Project Management", "Communication", "Troubleshooting"],
   },
 ];
 
 const SOFTWARE_TOOLS = [
+  "Siemens NX",
   "SolidWorks",
-  "AutoCAD",
+  "Teamcenter",
   "ANSYS",
   "MATLAB",
+  "Arduino IDE",
   "Python",
-  "Excel",
-  "C / C++",
-  "Raspberry Pi",
+  "Microsoft Office",
 ];
 
 /* ----------------------------- HELPERS ----------------------------- */
@@ -340,8 +422,8 @@ function Home({ reduce }) {
               Mechanical engineering professional with experience in robotics, product development, embedded systems, and field engineering. Passionate about building intelligent solutions that combine precision, innovation, and real-world impact.
             </p>
             <nav className="ie-hero-cta" aria-label="Quick links">
-              <a className="hero-cta-button" href="#" onClick={(e) => e.preventDefault()}>Resume</a>
-              <a className="hero-cta-button" href="#" onClick={(e) => e.preventDefault()}>LinkedIn</a>
+              <a className="hero-cta-button" href="/ibrahim_resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+              <a className="hero-cta-button" href="https://www.linkedin.com/in/ibrahim-isphahani-b56577235" target="_blank" rel="noopener noreferrer">LinkedIn</a>
               <span className="hero-cta-email-wrap" ref={emailWrapRef}>
                 <button
                   type="button"
@@ -492,18 +574,607 @@ function Projects({ setPage, reduce }) {
   );
 }
 
+function ProjectVideoButton({ url, className = "" }) {
+  return (
+    <a
+      className={`ie-btn ie-btn-primary ie-proj-video ${className}`.trim()}
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Watch Project Videos <span className="ie-arrow" aria-hidden="true">→</span>
+    </a>
+  );
+}
+
+function TrashProjectIcon({ type }) {
+  const icons = {
+    what: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    how: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    results: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    video: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    learned: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  };
+  return <span className="ie-trash-proj-icon">{icons[type]}</span>;
+}
+
+function TrashTopCardBody({ bullets }) {
+  if (!bullets?.length) return null;
+  return (
+    <ul className="ie-trash-top-list">
+      {bullets.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+function TrashProjectCard({ label, icon, children, reduce, delay, className = "" }) {
+  return (
+    <Reveal reduce={reduce} delay={delay} className={`ie-trash-proj-card ${className}`.trim()}>
+      <h2 className="ie-trash-proj-card-head">
+        <TrashProjectIcon type={icon} />
+        <span>{label}</span>
+      </h2>
+      <div className="ie-trash-proj-card-body">{children}</div>
+    </Reveal>
+  );
+}
+
+/* ----------------------------- ETC PROJECT PAGE ----------------------------- */
+const ETC_COMPONENTS = [
+  { src: e1, label: "Sensor Grip Female", alt: "Sensor Grip Female CAD render" },
+  { src: e2, label: "Sensor Grip Male", alt: "Sensor Grip Male CAD render" },
+  { src: e3, label: "Spacer", alt: "Spacer CAD render" },
+];
+
+const ETC_GALLERY = [
+  { src: etc1, alt: "Electronic Throttle Control project gallery image 1" },
+  { src: etc2, alt: "Electronic Throttle Control project gallery image 2" },
+  { src: etc3, alt: "Electronic Throttle Control project gallery image 3" },
+];
+
+function EtcProjectIcon({ type }) {
+  const icons = {
+    what: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    how: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    results: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    components: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M3.3 7 12 12l8.7-5M12 22V12" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    video: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    learned: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    gallery: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <path d="m21 15-5-5L5 21" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  };
+  return <span className="ie-etc-proj-icon">{icons[type]}</span>;
+}
+
+function EtcTopCardBody({ bullets }) {
+  if (!bullets?.length) return null;
+  return (
+    <ul className="ie-etc-top-list">
+      {bullets.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+function EtcLearnedBody({ paragraphs }) {
+  if (!paragraphs?.length) return null;
+  return paragraphs.map((paragraph) => (
+    <p className="ie-etc-learned-p" key={paragraph}>
+      {paragraph}
+    </p>
+  ));
+}
+
+function EtcProjectCard({ label, children, reduce, delay, className = "", icon, headless = false }) {
+  return (
+    <Reveal reduce={reduce} delay={delay} className={`ie-etc-proj-card ${className}`.trim()}>
+      {!headless && (
+        <h2 className="ie-etc-proj-card-head">
+          <EtcProjectIcon type={icon} />
+          <span>{label}</span>
+        </h2>
+      )}
+      <div className="ie-etc-proj-card-body">{children}</div>
+    </Reveal>
+  );
+}
+
+function EtcProjectPage({ data, setPage, reduce }) {
+  const idx = ORDER.indexOf(data.id);
+  const next = ORDER[idx + 1];
+
+  const topCards = [
+    { key: "what", label: "What?", icon: "what", bullets: data.what, className: "ie-etc-proj-card--what" },
+    { key: "how", label: "How?", icon: "how", bullets: data.how, className: "ie-etc-proj-card--how" },
+    { key: "results", label: "Results", icon: "results", bullets: data.results, className: "ie-etc-proj-card--results" },
+  ];
+
+  return (
+    <section className="ie-section ie-etc-proj">
+      <div className="ie-container ie-etc-proj-inner">
+        <Reveal reduce={reduce} className="ie-crumb-row">
+          <button className="ie-back" type="button" onClick={() => setPage("projects")}>
+            ← PROJECTS
+          </button>
+          <span className="ie-crumb">PROJECT {data.projNo} / {data.title.toUpperCase()}</span>
+        </Reveal>
+
+        <Reveal reduce={reduce} delay={0.04} className="ie-etc-proj-header">
+          <h1 className="ie-etc-proj-title">Electronic Throttle Control – SAE Formula E</h1>
+        </Reveal>
+
+        <div className="ie-etc-proj-top">
+          {topCards.map((card, i) => (
+            <EtcProjectCard
+              key={card.key}
+              label={card.label}
+              icon={card.icon}
+              reduce={reduce}
+              delay={0.06 + i * 0.04}
+              className={card.className}
+            >
+              <EtcTopCardBody bullets={card.bullets} />
+            </EtcProjectCard>
+          ))}
+        </div>
+
+        <div className="ie-etc-proj-mid">
+          <EtcProjectCard
+            label="Designed Components:"
+            icon="components"
+            reduce={reduce}
+            delay={0.18}
+            className="ie-etc-proj-card--components"
+          >
+            <div className="ie-etc-proj-components-grid">
+              {ETC_COMPONENTS.map((component) => (
+                <figure key={component.label} className="ie-etc-proj-component-item">
+                  <div className="ie-etc-proj-component-media">
+                    <img src={component.src} alt={component.alt} loading="lazy" />
+                  </div>
+                  <figcaption className="ie-etc-proj-component-caption">{component.label}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </EtcProjectCard>
+
+          {data.videoUrl && (
+            <EtcProjectCard
+              label="Link To Videos:"
+              icon="video"
+              reduce={reduce}
+              delay={0.22}
+              className="ie-etc-proj-card--video"
+            >
+              <ProjectVideoButton url={data.videoUrl} className="ie-etc-proj-video-btn" />
+            </EtcProjectCard>
+          )}
+        </div>
+
+        <EtcProjectCard
+          headless
+          reduce={reduce}
+          delay={0.24}
+          className="ie-etc-proj-card--gallery"
+        >
+          <div className="ie-etc-proj-gallery-grid">
+            {ETC_GALLERY.map((image) => (
+              <figure key={image.alt} className="ie-etc-proj-gallery-item">
+                <div className="ie-etc-proj-component-media">
+                  <img src={image.src} alt={image.alt} loading="lazy" />
+                </div>
+              </figure>
+            ))}
+          </div>
+        </EtcProjectCard>
+
+        <EtcProjectCard
+          label="What Was Learned?"
+          icon="learned"
+          reduce={reduce}
+          delay={0.26}
+          className="ie-etc-proj-card--learned"
+        >
+          <EtcLearnedBody paragraphs={data.learned} />
+        </EtcProjectCard>
+
+        <div className="ie-projnav">
+          <span />
+          {next ? (
+            <button className="ie-projnav-btn ie-projnav-next" type="button" onClick={() => setPage(next)}>
+              <span className="ie-projnav-dir">NEXT →</span>
+              <span className="ie-projnav-name">{PROJECTS[next].title}</span>
+            </button>
+          ) : <span />}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ----------------------------- ROBOTIC ARM PROJECT PAGE ----------------------------- */
+const ARM_GALLERY = [
+  { src: arm1, alt: "Robotic Arm project gallery image 1" },
+  { src: arm2, alt: "Robotic Arm project gallery image 2" },
+  { src: arm3, alt: "Robotic Arm project gallery image 3" },
+];
+
+const ARM_COMPONENTS = [
+  { src: ac1, label: "Robotic Arm Base", alt: "Robotic Arm Base CAD render" },
+  { src: ac2, label: "Arm Link 1", alt: "Arm Link 1 CAD render" },
+  { src: ac3, label: "Arm Link 2", alt: "Arm Link 2 CAD render" },
+  { src: ac4, label: "Wrist", alt: "Wrist CAD render" },
+  { src: ac5, label: "Gripper Base", alt: "Gripper Base CAD render" },
+  { src: ac6, label: "Gripper: Gear, Link, Pincher", alt: "Gripper Gear Link Pincher CAD render" },
+];
+
+function ArmProjectIcon({ type }) {
+  const icons = {
+    what: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    how: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    results: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    components: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M3.3 7 12 12l8.7-5M12 22V12" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    learned: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    gallery: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <path d="m21 15-5-5L5 21" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  };
+  return <span className="ie-arm-proj-icon">{icons[type]}</span>;
+}
+
+function ArmTopCardBody({ bullets }) {
+  if (!bullets?.length) return null;
+  return (
+    <ul className="ie-arm-top-list">
+      {bullets.map((item) => (
+        <li key={item}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+
+function ArmLearnedBody({ paragraphs }) {
+  if (!paragraphs?.length) return null;
+  return paragraphs.map((paragraph) => (
+    <p className="ie-arm-learned-p" key={paragraph}>
+      {paragraph}
+    </p>
+  ));
+}
+
+function ArmProjectCard({ label, children, reduce, delay, className = "", icon, headless = false }) {
+  return (
+    <Reveal reduce={reduce} delay={delay} className={`ie-arm-proj-card ${className}`.trim()}>
+      {!headless && (
+        <h2 className="ie-arm-proj-card-head">
+          <ArmProjectIcon type={icon} />
+          <span>{label}</span>
+        </h2>
+      )}
+      <div className="ie-arm-proj-card-body">{children}</div>
+    </Reveal>
+  );
+}
+
+function ArmProjectPage({ data, setPage, reduce }) {
+  const idx = ORDER.indexOf(data.id);
+  const prev = ORDER[idx - 1];
+  const next = ORDER[idx + 1];
+
+  const topCards = [
+    { key: "what", label: "What?", icon: "what", bullets: data.what, className: "ie-arm-proj-card--what" },
+    { key: "how", label: "How?", icon: "how", bullets: data.how, className: "ie-arm-proj-card--how" },
+    { key: "results", label: "Results", icon: "results", bullets: data.results, className: "ie-arm-proj-card--results" },
+  ];
+
+  return (
+    <section className="ie-section ie-arm-proj">
+      <div className="ie-container ie-arm-proj-inner">
+        <Reveal reduce={reduce} className="ie-crumb-row">
+          <button className="ie-back" type="button" onClick={() => setPage("projects")}>
+            ← PROJECTS
+          </button>
+          <span className="ie-crumb">PROJECT {data.projNo} / {data.title.toUpperCase()}</span>
+        </Reveal>
+
+        <Reveal reduce={reduce} delay={0.04} className="ie-arm-proj-header">
+          <h1 className="ie-arm-proj-title">Robotic Arm – Personal Project</h1>
+        </Reveal>
+
+        <div className="ie-arm-proj-top">
+          {topCards.map((card, i) => (
+            <ArmProjectCard
+              key={card.key}
+              label={card.label}
+              icon={card.icon}
+              reduce={reduce}
+              delay={0.06 + i * 0.04}
+              className={card.className}
+            >
+              <ArmTopCardBody bullets={card.bullets} />
+            </ArmProjectCard>
+          ))}
+        </div>
+
+        <ArmProjectCard
+          headless
+          reduce={reduce}
+          delay={0.18}
+          className="ie-arm-proj-card--gallery"
+        >
+          <div className="ie-arm-proj-gallery-grid">
+            {ARM_GALLERY.map((image) => (
+              <figure key={image.alt} className="ie-arm-proj-gallery-item">
+                <div className="ie-arm-proj-component-media">
+                  <img src={image.src} alt={image.alt} loading="lazy" />
+                </div>
+              </figure>
+            ))}
+          </div>
+        </ArmProjectCard>
+
+        <ArmProjectCard
+          label="Designed Components:"
+          icon="components"
+          reduce={reduce}
+          delay={0.22}
+          className="ie-arm-proj-card--components"
+        >
+          <div className="ie-arm-proj-components-grid">
+            {ARM_COMPONENTS.map((component) => (
+              <figure key={component.label} className="ie-arm-proj-component-item">
+                <div className="ie-arm-proj-component-media">
+                  <img src={component.src} alt={component.alt} loading="lazy" />
+                </div>
+                <figcaption className="ie-arm-proj-component-caption">{component.label}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </ArmProjectCard>
+
+        <ArmProjectCard
+          label="What Was Learned?"
+          icon="learned"
+          reduce={reduce}
+          delay={0.26}
+          className="ie-arm-proj-card--learned"
+        >
+          <ArmLearnedBody paragraphs={data.learned} />
+        </ArmProjectCard>
+
+        <div className="ie-projnav">
+          {prev ? (
+            <button className="ie-projnav-btn" type="button" onClick={() => setPage(prev)}>
+              <span className="ie-projnav-dir">← PREVIOUS</span>
+              <span className="ie-projnav-name">{PROJECTS[prev].title}</span>
+            </button>
+          ) : <span />}
+          {next ? (
+            <button className="ie-projnav-btn ie-projnav-next" type="button" onClick={() => setPage(next)}>
+              <span className="ie-projnav-dir">NEXT →</span>
+              <span className="ie-projnav-name">{PROJECTS[next].title}</span>
+            </button>
+          ) : <span />}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ----------------------------- TRASH ROBOT PROJECT PAGE ----------------------------- */
+const TRASH_GALLERY = [
+  { src: t1, alt: "Trash Robot project image 1" },
+  { src: t2, alt: "Trash Robot project image 2" },
+  { src: t3, alt: "Trash Robot project image 3" },
+];
+
+function TrashRobotProjectPage({ data, setPage, reduce }) {
+  const idx = ORDER.indexOf(data.id);
+  const prev = ORDER[idx - 1];
+
+  const topCards = [
+    { key: "what", label: "What?", icon: "what", bullets: data.what, className: "ie-trash-proj-card--what" },
+    { key: "how", label: "How?", icon: "how", bullets: data.how, className: "ie-trash-proj-card--how" },
+    { key: "results", label: "Results", icon: "results", bullets: data.results, className: "ie-trash-proj-card--results" },
+  ];
+
+  return (
+    <section className="ie-section ie-trash-proj">
+      <div className="ie-container ie-trash-proj-inner">
+        <Reveal reduce={reduce} className="ie-crumb-row">
+          <button className="ie-back" type="button" onClick={() => setPage("projects")}>
+            ← PROJECTS
+          </button>
+          <span className="ie-crumb">PROJECT {data.projNo} / {data.title.toUpperCase()}</span>
+        </Reveal>
+
+        <Reveal reduce={reduce} delay={0.04} className="ie-trash-proj-header">
+          <h1 className="ie-trash-proj-title">Trash Robot – Personal Project (Work in Progress)</h1>
+        </Reveal>
+
+        <Reveal reduce={reduce} delay={0.05} className="ie-trash-proj-gallery">
+          {TRASH_GALLERY.map((image, i) => (
+            <figure
+              key={image.alt}
+              className={`ie-trash-proj-gallery-item${i === 0 ? " ie-trash-proj-gallery-item--contain" : ""}`}
+            >
+              <img src={image.src} alt={image.alt} loading="lazy" />
+            </figure>
+          ))}
+        </Reveal>
+
+        <div className="ie-trash-proj-top">
+          {topCards.map((card, i) => (
+            <TrashProjectCard
+              key={card.key}
+              label={card.label}
+              icon={card.icon}
+              reduce={reduce}
+              delay={0.06 + i * 0.04}
+              className={card.className}
+            >
+              <TrashTopCardBody bullets={card.bullets} />
+            </TrashProjectCard>
+          ))}
+        </div>
+
+        {data.videoUrl && (
+          <TrashProjectCard label="Link To Videos:" icon="video" reduce={reduce} delay={0.2} className="ie-trash-proj-card--video">
+            <ProjectVideoButton url={data.videoUrl} className="ie-trash-proj-video-btn" />
+          </TrashProjectCard>
+        )}
+
+        <TrashProjectCard label="What Was Learned?" icon="learned" reduce={reduce} delay={0.24} className="ie-trash-proj-card--learned">
+          <ProjectSectionBody paragraphs={data.learned} />
+        </TrashProjectCard>
+
+        <div className="ie-projnav">
+          {prev ? (
+            <button className="ie-projnav-btn" type="button" onClick={() => setPage(prev)}>
+              <span className="ie-projnav-dir">← PREVIOUS</span>
+              <span className="ie-projnav-name">{PROJECTS[prev].title}</span>
+            </button>
+          ) : <span />}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ProjectSectionBody({ bullets, paragraphs, text }) {
+  if (bullets?.length) {
+    return (
+      <ul className="ie-spec4-list">
+        {bullets.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    );
+  }
+  if (paragraphs?.length) {
+    return paragraphs.map((paragraph) => (
+      <p className="ie-spec4-p" key={paragraph}>
+        {paragraph}
+      </p>
+    ));
+  }
+  if (text) {
+    return <p className="ie-spec4-p ie-spec4-pre">{text}</p>;
+  }
+  return null;
+}
+
 /* ----------------------------- PROJECT PAGE ----------------------------- */
 function ProjectPage({ data, setPage, reduce }) {
   const idx = ORDER.indexOf(data.id);
   const prev = ORDER[idx - 1];
   const next = ORDER[idx + 1];
 
-  const SPECS = [
-    ["WHAT", data.what],
-    ["HOW", data.how],
-    ["RESULTS", data.results],
-    ["WHAT WAS LEARNED", data.learned],
+  const sections = [
+    { key: "what", label: "What?", bullets: data.what },
+    { key: "how", label: "How?", bullets: data.how },
+    { key: "results", label: "Results", bullets: data.results },
   ];
+  if (data.designedComponents) {
+    sections.push({
+      key: "components",
+      label: "Designed Components",
+      text: data.designedComponents,
+    });
+  }
+  sections.push({
+    key: "learned",
+    label: "What Was Learned?",
+    paragraphs: data.learned,
+    fullWidth: true,
+  });
+
+  const showVideoAfterComponents =
+    data.videoUrl && data.videoPosition === "afterComponents";
+  const showVideoTop = data.videoUrl && data.videoPosition === "top";
 
   return (
     <section className="ie-section">
@@ -521,33 +1192,35 @@ function ProjectPage({ data, setPage, reduce }) {
           {data.roles && <p className="ie-proj-roles">{data.roles}</p>}
         </Reveal>
 
-        <Reveal reduce={reduce} delay={0.08} as="p" className="ie-lead">
-          {data.desc}
-        </Reveal>
-
-        <Reveal reduce={reduce} delay={0.1} className="ie-viewer-block">
-          <span className="ie-block-eyebrow">CAD / 3D VIEWER</span>
-          <Placeholder label="CAD / 3D VIEWER" sub="INTERACTIVE MODEL · PLACEHOLDER" variant="tall" />
-        </Reveal>
+        {showVideoTop && (
+          <Reveal reduce={reduce} delay={0.06} className="ie-proj-video-row">
+            <ProjectVideoButton url={data.videoUrl} />
+          </Reveal>
+        )}
 
         <div className="ie-specs4">
-          {SPECS.map(([k, v], i) => (
-            <Reveal reduce={reduce} delay={0.05 * i} className="ie-spec4" key={k}>
-              <span className="ie-spec4-k">{k}</span>
-              <p className="ie-spec4-p">{v}</p>
-            </Reveal>
+          {sections.map((section, i) => (
+            <React.Fragment key={section.key}>
+              <Reveal
+                reduce={reduce}
+                delay={0.05 * i}
+                className={`ie-spec4${section.fullWidth ? " ie-spec4-full" : ""}`}
+              >
+                <span className="ie-spec4-k">{section.label}</span>
+                <ProjectSectionBody
+                  bullets={section.bullets}
+                  paragraphs={section.paragraphs}
+                  text={section.text}
+                />
+              </Reveal>
+              {showVideoAfterComponents && section.key === "components" && (
+                <Reveal reduce={reduce} delay={0.05 * i + 0.02} className="ie-proj-video-row ie-proj-video-row--grid">
+                  <ProjectVideoButton url={data.videoUrl} />
+                </Reveal>
+              )}
+            </React.Fragment>
           ))}
         </div>
-
-        <Reveal reduce={reduce} className="ie-media-block">
-          <span className="ie-block-eyebrow">MEDIA</span>
-          <Placeholder label="VIDEO" sub="DEMO REEL · PLACEHOLDER" variant="wide" />
-          <div className="ie-media-thumbs">
-            <Placeholder label="IMAGE 01" sub="PLACEHOLDER" variant="thumb" />
-            <Placeholder label="IMAGE 02" sub="PLACEHOLDER" variant="thumb" />
-            <Placeholder label="IMAGE 03" sub="PLACEHOLDER" variant="thumb" />
-          </div>
-        </Reveal>
 
         <div className="ie-projnav">
           {prev ? (
@@ -571,7 +1244,7 @@ function ProjectPage({ data, setPage, reduce }) {
 /* ----------------------------- EXPERIENCE ----------------------------- */
 function Experience({ reduce }) {
   return (
-    <section className="ie-section">
+    <section className="ie-section ie-exp-page">
       <div className="ie-container">
         <Reveal reduce={reduce} className="ie-crumb-row">
           <span className="ie-crumb">03 / EXPERIENCE LOG</span>
@@ -582,8 +1255,8 @@ function Experience({ reduce }) {
         </Reveal>
 
         <Reveal reduce={reduce} delay={0.08} as="p" className="ie-lead">
-          Engineering experience across robotics, product development, embedded systems,
-          and field validation — documented as a technical specification log.
+          Mechanical engineering experience spanning product design, robotics, embedded systems,
+          manufacturing, and field engineering.
         </Reveal>
 
         <Reveal reduce={reduce} delay={0.1}>
@@ -609,7 +1282,7 @@ function Experience({ reduce }) {
                   </div>
                   <span className="ie-exp-period">{job.dates}</span>
                 </div>
-                <p className="ie-exp-p">{job.description}</p>
+                {job.description && <p className="ie-exp-p">{job.description}</p>}
                 <ul className="ie-exp-list">
                   {job.achievements.map((item) => (
                     <li key={item}>{item}</li>
@@ -638,7 +1311,14 @@ function Experience({ reduce }) {
                 </div>
                 <span className="ie-exp-period">{item.graduation}</span>
               </div>
-              <p className="ie-exp-p">{item.details}</p>
+              {item.details && <p className="ie-exp-p">{item.details}</p>}
+              {item.activities?.length > 0 && (
+                <ul className="ie-exp-list">
+                  {item.activities.map((activity) => (
+                    <li key={activity}>{activity}</li>
+                  ))}
+                </ul>
+              )}
             </Reveal>
           ))}
         </div>
@@ -656,7 +1336,9 @@ function Experience({ reduce }) {
             >
               <span className="ie-exp-cert-k">CERT</span>
               <span className="ie-exp-cert-name">{cert.name}</span>
-              <span className="ie-exp-cert-meta">{cert.issuer} · {cert.year}</span>
+              {(cert.issuer || cert.year) && (
+                <span className="ie-exp-cert-meta">{[cert.issuer, cert.year].filter(Boolean).join(" · ")}</span>
+              )}
             </Reveal>
           ))}
         </div>
@@ -706,10 +1388,14 @@ function Experience({ reduce }) {
 /* ----------------------------- CONTACT ----------------------------- */
 function Contact({ reduce }) {
   const ROWS = [
-    ["EMAIL", "hello@ibrahimisphahani.com", "mailto:hello@ibrahimisphahani.com"],
-    ["LINKEDIN", "/in/ibrahim-isphahani", "#"],
-    ["GITHUB", "/ibrahim-isphahani", "#"],
-    ["LOCATION", "Chicago, Illinois", null],
+    { key: "EMAIL", value: "ibrahimisphahani@gmail.com", href: "mailto:ibrahimisphahani@gmail.com" },
+    {
+      key: "LINKEDIN",
+      value: "linkedin.com/in/ibrahim-isphahani-b56577235",
+      href: "https://www.linkedin.com/in/ibrahim-isphahani-b56577235",
+      external: true,
+    },
+    { key: "LOCATION", value: "Chicagoland Area" },
   ];
   return (
     <section className="ie-section">
@@ -726,26 +1412,34 @@ function Contact({ reduce }) {
         </Reveal>
 
         <Reveal reduce={reduce} delay={0.12} className="ie-crows">
-          {ROWS.map(([k, v, href]) => (
-            <div className="ie-crow" key={k}>
-              <span className="ie-crow-k">{k}</span>
+          {ROWS.map((row) => (
+            <div className="ie-crow" key={row.key}>
+              <span className="ie-crow-k">{row.key}</span>
               <span className="ie-crow-lead" aria-hidden="true" />
-              {href ? (
-                <a className="ie-crow-v" href={href} onClick={href === "#" ? (e) => e.preventDefault() : undefined}>
-                  {v}
+              {row.href ? (
+                <a
+                  className="ie-crow-v"
+                  href={row.href}
+                  {...(row.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
+                  {row.value}
                 </a>
               ) : (
-                <span className="ie-crow-v">{v}</span>
+                <span className="ie-crow-v">{row.value}</span>
               )}
             </div>
           ))}
         </Reveal>
 
         <Reveal reduce={reduce} delay={0.16} className="ie-actions">
-          <a className="ie-btn ie-btn-primary" href="mailto:hello@ibrahimisphahani.com">
+          <a className="ie-btn ie-btn-primary" href="mailto:ibrahimisphahani@gmail.com">
             EMAIL ME <span className="ie-arrow" aria-hidden="true">→</span>
           </a>
-          <a className="ie-btn ie-btn-secondary" href="#" onClick={(e) => e.preventDefault()}>
+          <a
+            className="ie-btn ie-btn-secondary"
+            href="/ibrahim_resume.pdf"
+            download="Ibrahim_Isphahani_Resume.pdf"
+          >
             DOWNLOAD RESUME
           </a>
         </Reveal>
@@ -793,9 +1487,9 @@ export default function App() {
     switch (page) {
       case "home": return <Home reduce={reduce} />;
       case "projects": return <Projects setPage={setPage} reduce={reduce} />;
-      case "etc": return <ProjectPage data={PROJECTS.etc} setPage={setPage} reduce={reduce} />;
-      case "arm": return <ProjectPage data={PROJECTS.arm} setPage={setPage} reduce={reduce} />;
-      case "trash": return <ProjectPage data={PROJECTS.trash} setPage={setPage} reduce={reduce} />;
+      case "etc": return <EtcProjectPage data={PROJECTS.etc} setPage={setPage} reduce={reduce} />;
+      case "arm": return <ArmProjectPage data={PROJECTS.arm} setPage={setPage} reduce={reduce} />;
+      case "trash": return <TrashRobotProjectPage data={PROJECTS.trash} setPage={setPage} reduce={reduce} />;
       case "experience": return <Experience reduce={reduce} />;
       case "contact": return <Contact reduce={reduce} />;
       default: return null;
@@ -1236,7 +1930,7 @@ html, body, #root{
 .ie-container{ width:100%; max-width:960px; overflow:visible; }
 
 /* ================= BUTTONS (shared) ================= */
-.ie-actions{ display:flex; flex-wrap:wrap; justify-content:flex-start; gap:16px; }
+.ie-actions{ display:flex; flex-wrap:wrap; justify-content:flex-start; gap:16px; margin-top:clamp(24px,3.5vh,32px); }
 .ie-btn{
   display:inline-flex; align-items:center; gap:9px;
   font-family:var(--mono); font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase;
@@ -1371,7 +2065,7 @@ html, body, #root{
 /* ================= MODULES ================= */
 .ie-mods{ display:flex; flex-direction:column; gap:clamp(20px,3vw,28px); }
 .ie-mod{
-  display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:clamp(24px,3vw,44px);
+  display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:start; gap:clamp(24px,3vw,44px);
   border-radius:26px; padding:clamp(24px,3vw,36px) clamp(26px,3.5vw,38px);
   background:var(--glass); border:1px solid rgba(255,255,255,0.6);
   -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px);
@@ -1442,6 +2136,575 @@ html, body, #root{
 .ie-spec4{ border-radius:24px; padding:26px 26px; background:var(--glass); border:1px solid rgba(255,255,255,0.6); -webkit-backdrop-filter:blur(20px); backdrop-filter:blur(20px); box-shadow:0 18px 46px rgba(17,17,17,0.1); }
 .ie-spec4-k{ display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.18em; color:var(--accent); margin-bottom:12px; text-shadow:0 0 16px var(--glow); }
 .ie-spec4-p{ margin:0; font-size:1rem; line-height:1.6; color:#262626; }
+.ie-spec4-p + .ie-spec4-p{ margin-top:14px; }
+.ie-spec4-pre{ white-space:pre-line; }
+.ie-spec4-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.ie-spec4-list li{
+  position:relative;
+  padding-left:18px;
+  font-size:1rem;
+  line-height:1.6;
+  color:#262626;
+}
+.ie-spec4-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0.62em;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 8px var(--glow);
+  transform:translateY(-50%);
+}
+.ie-proj-video-row{ margin-top:clamp(20px,3vh,28px); }
+.ie-proj-video-spec{ display:flex; align-items:center; justify-content:flex-start; grid-column:1 / -1; }
+.ie-proj-video{ margin-top:4px; }
+
+/* ================= ETC PROJECT PAGE ================= */
+.ie-etc-proj .ie-container.ie-etc-proj-inner{
+  max-width:min(1240px,100%);
+}
+.ie-etc-proj .ie-crumb-row{
+  margin-bottom:clamp(10px,1.5vh,16px);
+}
+.ie-etc-proj-header{
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-etc-proj-title{
+  margin:0;
+  font-size:clamp(1.55rem,3.6vw,2.1rem);
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.18;
+  color:#111;
+}
+.ie-etc-proj-top{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(16px,2vw,24px);
+  align-items:stretch;
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-etc-proj-mid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(240px,320px);
+  gap:clamp(16px,2vw,24px);
+  align-items:stretch;
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-etc-proj-card{
+  background:rgba(255,255,255,0.88);
+  border:1px solid rgba(17,17,17,0.08);
+  border-radius:16px;
+  padding:clamp(20px,2.5vw,28px);
+  box-shadow:0 4px 18px rgba(0,0,0,0.05);
+  overflow:visible;
+}
+.ie-etc-proj-top .ie-etc-proj-card--what,
+.ie-etc-proj-top .ie-etc-proj-card--how,
+.ie-etc-proj-top .ie-etc-proj-card--results{
+  width:100%;
+  padding:18px 16px;
+  display:flex;
+  flex-direction:column;
+  align-self:stretch;
+}
+.ie-etc-proj-card-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 16px;
+  font-size:clamp(1rem,1.7vw,1.125rem);
+  font-weight:700;
+  line-height:1.25;
+  color:#111;
+}
+.ie-etc-proj-top .ie-etc-proj-card-head,
+.ie-etc-proj-card--components .ie-etc-proj-card-head,
+.ie-etc-proj-card--video .ie-etc-proj-card-head,
+.ie-etc-proj-card--learned .ie-etc-proj-card-head{
+  flex-shrink:0;
+  margin-bottom:14px;
+  font-size:clamp(1.125rem,1.8vw,1.3125rem);
+  line-height:1.25;
+}
+.ie-etc-proj-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  color:var(--accent);
+}
+.ie-etc-proj-card-body{
+  min-width:0;
+  overflow:visible;
+}
+.ie-etc-proj-top .ie-etc-proj-card-body{
+  flex:1 1 auto;
+}
+.ie-etc-top-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.ie-etc-top-list li{
+  position:relative;
+  padding-left:18px;
+  font-size:16px;
+  line-height:1.55;
+  color:#262626;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.ie-etc-top-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0.55em;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 8px var(--glow);
+  transform:translateY(-50%);
+}
+.ie-etc-proj-components-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(14px,2vw,20px);
+}
+.ie-etc-proj-component-item{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+}
+.ie-etc-proj-component-media{
+  height:clamp(160px,18vw,220px);
+  border-radius:12px;
+  overflow:hidden;
+  background:#e8e6e3;
+  border:1px solid rgba(17,17,17,0.06);
+}
+.ie-etc-proj-component-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+.ie-etc-proj-component-caption{
+  margin:0;
+  text-align:center;
+  font-size:14px;
+  line-height:1.4;
+  color:#444;
+}
+.ie-etc-proj-card--components{
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+.ie-etc-proj-card--components .ie-etc-proj-card-body{
+  flex:1 1 auto;
+}
+.ie-etc-proj-card--gallery{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-etc-proj-card--gallery .ie-etc-proj-card-body{
+  flex:1 1 auto;
+}
+.ie-etc-proj-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(14px,2vw,20px);
+}
+.ie-etc-proj-gallery-item{
+  margin:0;
+  min-width:0;
+}
+.ie-etc-proj-card--video{
+  display:flex;
+  flex-direction:column;
+  align-self:stretch;
+  padding:18px 16px;
+}
+.ie-etc-proj-card--video .ie-etc-proj-card-body{
+  display:flex;
+  flex:1 1 auto;
+  align-items:center;
+}
+.ie-etc-proj-video-btn{
+  width:100%;
+  justify-content:center;
+}
+.ie-etc-proj-card--learned{
+  width:100%;
+}
+.ie-etc-proj-card--learned .ie-etc-proj-card-body{
+  max-width:100%;
+}
+.ie-etc-learned-p{
+  margin:0;
+  max-width:72ch;
+  font-size:16px;
+  line-height:1.58;
+  color:#262626;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.ie-etc-learned-p + .ie-etc-learned-p{
+  margin-top:16px;
+}
+
+/* ================= ROBOTIC ARM PROJECT PAGE ================= */
+.ie-arm-proj .ie-container.ie-arm-proj-inner{
+  max-width:min(1240px,100%);
+}
+.ie-arm-proj .ie-crumb-row{
+  margin-bottom:clamp(10px,1.5vh,16px);
+}
+.ie-arm-proj-header{
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-arm-proj-title{
+  margin:0;
+  font-size:clamp(1.55rem,3.6vw,2.1rem);
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.18;
+  color:#111;
+}
+.ie-arm-proj-top{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(16px,2vw,24px);
+  align-items:stretch;
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-arm-proj-card{
+  background:rgba(255,255,255,0.88);
+  border:1px solid rgba(17,17,17,0.08);
+  border-radius:16px;
+  padding:clamp(20px,2.5vw,28px);
+  box-shadow:0 4px 18px rgba(0,0,0,0.05);
+  overflow:visible;
+}
+.ie-arm-proj-top .ie-arm-proj-card--what,
+.ie-arm-proj-top .ie-arm-proj-card--how,
+.ie-arm-proj-top .ie-arm-proj-card--results{
+  width:100%;
+  padding:18px 16px;
+  display:flex;
+  flex-direction:column;
+  align-self:stretch;
+}
+.ie-arm-proj-card-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 16px;
+  font-size:clamp(1rem,1.7vw,1.125rem);
+  font-weight:700;
+  line-height:1.25;
+  color:#111;
+}
+.ie-arm-proj-top .ie-arm-proj-card-head,
+.ie-arm-proj-card--components .ie-arm-proj-card-head,
+.ie-arm-proj-card--learned .ie-arm-proj-card-head{
+  flex-shrink:0;
+  margin-bottom:14px;
+  font-size:clamp(1.125rem,1.8vw,1.3125rem);
+  line-height:1.25;
+}
+.ie-arm-proj-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  color:var(--accent);
+}
+.ie-arm-proj-card-body{
+  min-width:0;
+  overflow:visible;
+}
+.ie-arm-proj-top .ie-arm-proj-card-body{
+  flex:1 1 auto;
+}
+.ie-arm-top-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.ie-arm-top-list li{
+  position:relative;
+  padding-left:18px;
+  font-size:16px;
+  line-height:1.55;
+  color:#262626;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.ie-arm-top-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0.55em;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 8px var(--glow);
+  transform:translateY(-50%);
+}
+.ie-arm-proj-card--gallery{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-arm-proj-card--gallery .ie-arm-proj-card-body{
+  flex:1 1 auto;
+}
+.ie-arm-proj-gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(14px,2vw,20px);
+}
+.ie-arm-proj-gallery-item{
+  margin:0;
+  min-width:0;
+}
+.ie-arm-proj-components-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(14px,2vw,20px);
+}
+.ie-arm-proj-component-item{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  min-width:0;
+}
+.ie-arm-proj-component-media{
+  height:clamp(160px,18vw,220px);
+  border-radius:12px;
+  overflow:hidden;
+  background:#e8e6e3;
+  border:1px solid rgba(17,17,17,0.06);
+}
+.ie-arm-proj-component-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+.ie-arm-proj-component-caption{
+  margin:0;
+  text-align:center;
+  font-size:14px;
+  line-height:1.4;
+  color:#444;
+}
+.ie-arm-proj-card--components{
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-arm-proj-card--components .ie-arm-proj-card-body{
+  flex:1 1 auto;
+}
+.ie-arm-proj-card--learned{
+  width:100%;
+}
+.ie-arm-proj-card--learned .ie-arm-proj-card-body{
+  max-width:100%;
+}
+.ie-arm-learned-p{
+  margin:0;
+  max-width:72ch;
+  font-size:16px;
+  line-height:1.58;
+  color:#262626;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.ie-arm-learned-p + .ie-arm-learned-p{
+  margin-top:16px;
+}
+
+/* ================= TRASH ROBOT PROJECT PAGE ================= */
+.ie-trash-proj .ie-container.ie-trash-proj-inner{
+  max-width:min(1240px,100%);
+}
+.ie-trash-proj .ie-crumb-row{
+  margin-bottom:clamp(10px,1.5vh,16px);
+}
+.ie-trash-proj-header{
+  margin-bottom:clamp(24px,3.5vh,36px);
+}
+.ie-trash-proj-title{
+  margin:0;
+  font-size:clamp(1.55rem,3.6vw,2.1rem);
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.18;
+  color:#111;
+}
+.ie-trash-proj-gallery{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(16px,2vw,24px);
+  margin:0 0 clamp(24px,3.5vh,36px);
+}
+.ie-trash-proj-gallery-item{
+  margin:0;
+  height:clamp(175px,23vw,265px);
+  border-radius:16px;
+  overflow:hidden;
+  background:#e8e6e3;
+  border:1px solid rgba(17,17,17,0.08);
+  box-shadow:0 4px 18px rgba(0,0,0,0.05);
+}
+.ie-trash-proj-gallery-item img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+}
+.ie-trash-proj-gallery-item--contain img{
+  object-fit:contain;
+  object-position:center center;
+}
+.ie-trash-proj-top{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(16px,2vw,24px);
+  align-items:stretch;
+}
+.ie-trash-proj-card{
+  background:rgba(255,255,255,0.88);
+  border:1px solid rgba(17,17,17,0.08);
+  border-radius:16px;
+  padding:clamp(20px,2.5vw,28px);
+  box-shadow:0 4px 18px rgba(0,0,0,0.05);
+  overflow:visible;
+}
+.ie-trash-proj-top .ie-trash-proj-card--what,
+.ie-trash-proj-top .ie-trash-proj-card--how,
+.ie-trash-proj-top .ie-trash-proj-card--results{
+  width:100%;
+  padding:18px 16px;
+  display:flex;
+  flex-direction:column;
+  align-self:stretch;
+}
+.ie-trash-proj-card-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 16px;
+  font-size:clamp(1rem,1.7vw,1.125rem);
+  font-weight:700;
+  line-height:1.25;
+  color:#111;
+}
+.ie-trash-proj-top .ie-trash-proj-card-head{
+  flex-shrink:0;
+  margin-bottom:14px;
+  font-size:clamp(1.125rem,1.8vw,1.3125rem);
+  line-height:1.25;
+}
+.ie-trash-proj-icon{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  color:var(--accent);
+}
+.ie-trash-proj-card-body{
+  min-width:0;
+  overflow:visible;
+}
+.ie-trash-proj-top .ie-trash-proj-card-body{
+  flex:1 1 auto;
+}
+.ie-trash-top-list{
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.ie-trash-top-list li{
+  position:relative;
+  padding-left:18px;
+  font-size:16px;
+  line-height:1.55;
+  color:#262626;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.ie-trash-top-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0.55em;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 8px var(--glow);
+  transform:translateY(-50%);
+}
+.ie-trash-proj-card--learned .ie-spec4-p{
+  font-size:0.98rem;
+  line-height:1.68;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+}
+.ie-trash-proj-card--learned .ie-spec4-p + .ie-spec4-p{
+  margin-top:16px;
+}
+.ie-trash-proj-card--video{
+  margin-top:clamp(16px,2vw,24px);
+  max-width:380px;
+}
+.ie-trash-proj-video-btn{
+  width:100%;
+  justify-content:center;
+}
+.ie-trash-proj-card--learned{
+  margin-top:clamp(16px,2vw,24px);
+  width:100%;
+}
+.ie-trash-proj-card--learned .ie-trash-proj-card-body{
+  max-width:100%;
+}
 
 /* project nav */
 .ie-projnav{ margin-top:clamp(40px,7vh,72px); padding-top:24px; border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; }
@@ -1452,6 +2715,17 @@ html, body, #root{
 .ie-projnav-name{ font-size:1.05rem; font-weight:700; letter-spacing:-0.01em; }
 
 /* ================= EXPERIENCE ================= */
+.ie-exp-page .ie-head{
+  margin-top:clamp(24px,3.5vh,32px);
+  margin-bottom:clamp(12px,1.5vh,16px);
+}
+.ie-exp-page .ie-exp-timeline,
+.ie-exp-page .ie-exp-stack,
+.ie-exp-page .ie-exp-certs,
+.ie-exp-page .ie-exp-skills-grid,
+.ie-exp-page .ie-exp-soft-grid{
+  margin-top:0;
+}
 .ie-exp-stack{
   margin-top:clamp(20px,3vh,28px);
   display:flex;
@@ -1681,6 +2955,19 @@ html, body, #root{
   letter-spacing:0.08em;
   color:#1d1d1d;
 }
+.ie-exp-page .ie-exp-soft-card{
+  justify-content:center;
+  min-height:clamp(50px,5.2vw,58px);
+  padding:14px 12px;
+}
+.ie-exp-page .ie-exp-soft-name{
+  font-size:clamp(13px,1.05vw,14px);
+  font-weight:700;
+  line-height:1.35;
+  text-align:center;
+  text-wrap:balance;
+  overflow-wrap:break-word;
+}
 
 /* ================= CONTACT ================= */
 .ie-crows{ margin-top:clamp(34px,6vh,56px); border-top:1px solid var(--line); max-width:640px; }
@@ -1805,6 +3092,19 @@ a.ie-crow-v:hover{ color:var(--accent); }
     right:0;
     min-width:min(300px, calc(100vw - 32px));
   }
+  .ie-trash-proj-top{ grid-template-columns:1fr 1fr; align-items:stretch; }
+  .ie-trash-proj-gallery{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ie-trash-proj-card--results{ grid-column:1 / -1; }
+  .ie-trash-proj-card--video{ max-width:100%; }
+  .ie-etc-proj-top{ grid-template-columns:1fr 1fr; align-items:stretch; }
+  .ie-etc-proj-top .ie-etc-proj-card--results{ grid-column:1 / -1; }
+  .ie-etc-proj-mid{ grid-template-columns:1fr; }
+  .ie-etc-proj-components-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ie-etc-proj-gallery-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ie-arm-proj-top{ grid-template-columns:1fr 1fr; align-items:stretch; }
+  .ie-arm-proj-top .ie-arm-proj-card--results{ grid-column:1 / -1; }
+  .ie-arm-proj-gallery-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .ie-arm-proj-components-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 
 /* Phone */
@@ -1854,6 +3154,34 @@ a.ie-crow-v:hover{ color:var(--accent); }
   .ie-crow{ padding:14px 0; }
   .ie-foot{ font-size:9px; letter-spacing:0.12em; text-align:center; }
   .ie-ph-body{ padding:14px 16px; }
+  .ie-trash-proj-top{ grid-template-columns:1fr; align-items:stretch; }
+  .ie-trash-proj-gallery{ grid-template-columns:1fr; }
+  .ie-trash-proj-gallery-item{ height:clamp(165px,38vw,215px); }
+  .ie-trash-proj-card--results{ grid-column:auto; }
+  .ie-trash-proj-card{ padding:18px 16px; }
+  .ie-trash-proj-top .ie-trash-proj-card--what,
+  .ie-trash-proj-top .ie-trash-proj-card--how,
+  .ie-trash-proj-top .ie-trash-proj-card--results{ padding:18px 16px; }
+  .ie-trash-proj-title{ font-size:clamp(1.35rem,6.5vw,1.65rem); }
+  .ie-etc-proj-top{ grid-template-columns:1fr; align-items:stretch; }
+  .ie-etc-proj-top .ie-etc-proj-card--results{ grid-column:auto; }
+  .ie-etc-proj-mid{ grid-template-columns:1fr; }
+  .ie-etc-proj-components-grid{ grid-template-columns:1fr; }
+  .ie-etc-proj-gallery-grid{ grid-template-columns:1fr; }
+  .ie-etc-proj-card{ padding:18px 16px; }
+  .ie-etc-proj-top .ie-etc-proj-card--what,
+  .ie-etc-proj-top .ie-etc-proj-card--how,
+  .ie-etc-proj-top .ie-etc-proj-card--results{ padding:18px 16px; }
+  .ie-etc-proj-title{ font-size:clamp(1.35rem,6.5vw,1.65rem); }
+  .ie-arm-proj-top{ grid-template-columns:1fr; align-items:stretch; }
+  .ie-arm-proj-top .ie-arm-proj-card--results{ grid-column:auto; }
+  .ie-arm-proj-gallery-grid{ grid-template-columns:1fr; }
+  .ie-arm-proj-components-grid{ grid-template-columns:1fr; }
+  .ie-arm-proj-card{ padding:18px 16px; }
+  .ie-arm-proj-top .ie-arm-proj-card--what,
+  .ie-arm-proj-top .ie-arm-proj-card--how,
+  .ie-arm-proj-top .ie-arm-proj-card--results{ padding:18px 16px; }
+  .ie-arm-proj-title{ font-size:clamp(1.35rem,6.5vw,1.65rem); }
 }
 
 /* Small phone */
